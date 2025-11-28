@@ -5,17 +5,27 @@ const body = document.querySelector("body"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
 
-      toggle.addEventListener("click", () =>{
-        sidebar.classList.toggle("close")
-      });
+// ===== Save Changes =====
+let saveMode = localStorage.getItem("mode")
+if (saveMode == "dark") {
+  body.classList.add("dark");
+  modeText.innerText = "Light Mode"
+}
 
-      modeSwitch.addEventListener("click", () =>{
-        body.classList.toggle("dark");
+// ===== Toggle sidebar ==== //
+toggle.addEventListener("click", () =>{
+  sidebar.classList.toggle("close")
+});
 
-        if(body.classList.contains("dark")) {
-            modeText.innerText = "Light Mode"
-        } else {
-            modeText.innerText = "Dark Mode"
-        }
-      });
-      
+// ===== Toggle Dark Mode =====// 
+modeSwitch.addEventListener("click", () =>{
+  body.classList.toggle("dark");
+
+  if(body.classList.contains("dark")) {
+      modeText.innerText = "Light Mode";
+      localStorage.setItem("mode", "dark");
+  } else {
+      modeText.innerText = "Dark Mode";
+      localStorage.setItem("mode", "light")
+  }
+});

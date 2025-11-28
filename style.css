@@ -272,6 +272,8 @@ body.dark .switch::before {
 
 }
 
+/* ===== Home ===== */
+
 .home {
     background: var(--body-color);
     position: relative;
@@ -293,9 +295,39 @@ body.dark .switch::before {
     width: calc(100%-88px);
 }
 
-.welcome {
+p.welcome {
     color: var(--text-color);
     font-size: 18px;
     font-weight: 450;
     padding-left: 10px;
+}
+
+p.news {
+    color: var(--text-color);
+    font-size: 17px;
+    font-weight: 450;
+    padding-left: 10px;
+}
+
+/* ===== Coding Languages ===== */
+
+.lang {
+    background: var(--body-color);
+    position: relative;
+    height: 100vh;
+    padding-left: 250px;
+    width: calc(100%-250px);
+    transition: var(--tran-05);
+}
+
+.lang .text {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 30px;
+    padding: 8px 40px;
+}
+
+.sidebar.close ~ .lang {
+    padding-left: 88px;
+    width: calc(100%-88px);
 }
