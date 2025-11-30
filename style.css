@@ -432,6 +432,7 @@ body.dark .switch::before {
 
 .main .button {
     display: inline;
+    color: #fffffff3;
     font-size: 30px;
     font-weight: 450;
     line-height: 6;
