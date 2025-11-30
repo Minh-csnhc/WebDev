@@ -3,7 +3,10 @@ const body = document.querySelector("body"),
       toggle = body.querySelector(".toggle"),
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
-      modeText = body.querySelector(".mode-text");
+      modeText = body.querySelector(".mode-text"),
+      Goto = body.querySelector(".lang"),
+      Py = body.querySelector(".lang-python"),
+      Pybutton = body.querySelector(".python")
 
 // ===== Save Changes =====
 let saveMode = localStorage.getItem("mode")
@@ -28,4 +31,19 @@ modeSwitch.addEventListener("click", () =>{
       modeText.innerText = "Dark Mode";
       localStorage.setItem("mode", "light")
   }
+});
+
+// ===== Goto Button ===== //
+Goto.addEventListener("click", () =>{
+  window.location.href = "lang.html"
+});
+
+// ===== Lang Button ===== //
+Py.addEventListener("click", () =>{
+  window.location.href = "python.html"
+});
+
+// ===== Lang-info Button ===== //
+Pybutton.addEventListener("click", () =>{
+  window.location.href = ""
 });

@@ -15,7 +15,10 @@
     --primary-color: #695cfe;
     --primary-color-light: #f6f5ff;
     --toggle-color: #ddd;
-    --text-color: #707070;
+    --text-color: #363535;
+    --border-color: #313030;
+    --waterfill-color: #8325e0;
+    --patern-color: #ccccccd8;
     /* ===== Transition ===== */
     --tran-03: all 0.2s ease;
     --tran-02: all 0.3s ease;
@@ -24,7 +27,8 @@
 }
 
 body {
-    height: 100vh;
+    color: var(--text-color);
+    height: 100%;
     background: var(--body-color);
     transition: var(--tran-05);
 }
@@ -35,7 +39,10 @@ body.dark {
     --primary-color: #3a3b3c;
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
-    --text-color: #ccc;
+    --text-color: #ffffffcc;
+    --border-color: #ccc;
+    --waterfill-color: #890ffc;
+    --patern-color: #cccccc86 ;
 }
 /* ===== Sidebar ===== */
 .sidebar {
@@ -274,60 +281,173 @@ body.dark .switch::before {
 
 /* ===== Home ===== */
 
-.home {
+.info-area {
     background: var(--body-color);
-    position: relative;
+    position: absolute;
     height: 100vh;
     padding-left: 250px;
     width: calc(100%-250px);
     transition: var(--tran-05);
+    
 }
 
-.home .text {
+.info-area .home .text {
     color: var(--text-color);
     font-weight: 500;
-    font-size: 30px;
+    font-size: 60px;
     padding: 8px 40px;
+    margin-top: 100px;
 }
 
-.sidebar.close ~ .home {
+.sidebar.close ~ .info-area {
     padding-left: 88px;
     width: calc(100%-88px);
 }
 
-p.welcome {
+.home p.welcome {
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 450;
-    padding-left: 10px;
+    padding: 8px 40px;
+    margin-top: -30px;
 }
 
-p.news {
+.home p.news {
     color: var(--text-color);
     font-size: 17px;
+    font-weight: 400;
+    padding: 8px 40px;
+    margin-top: -15px;
+}
+
+.home .button {
+    display: inline-block;
+    position: relative;
     font-weight: 450;
-    padding-left: 10px;
+    font-size: 25px;
+    padding: 9px 9px 9px 9px;
+    top: 20px;
+    left: 60px;
+    border: solid 1px var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    color: #fffffff3;
+    background: var(--waterfill-color);
+    transition: var(--tran-02);
+}
+
+.home .button:hover {
+    background-color: #695cfe;
+    transition: var(--tran-02);
+}
+
+
+
+.home .bot-border {
+    position: fixed;
+    border: solid 1px var(--border-color);
+    width: 100%;
+    margin-top: 45px;
 }
 
 /* ===== Coding Languages ===== */
-
-.lang {
-    background: var(--body-color);
-    position: relative;
-    height: 100vh;
-    padding-left: 250px;
-    width: calc(100%-250px);
-    transition: var(--tran-05);
-}
-
-.lang .text {
+.python {
     color: var(--text-color);
     font-weight: 500;
-    font-size: 30px;
-    padding: 8px 40px;
 }
 
-.sidebar.close ~ .lang {
-    padding-left: 88px;
-    width: calc(100%-88px);
+.python .text {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 60px;
+    padding: 8px 40px;
+    margin-top: 100px;
 }
+
+.python p.welcome {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 450;
+    padding: 8px 40px;
+    margin-top: -25px;
+}
+
+.python .lang {
+    display: flexbox;
+}
+
+.python li.lang-python {
+    
+    font-size: 37px;
+    margin-left: 35px;
+    padding: 15px 15px 15px 15px;
+    transition: var(--tran-03);
+    line-height: 7;
+}
+
+.python li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.python li.border {
+    display: inline;
+    display: flexbox;
+    border: solid 2px var(--border-color);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.python li.lang-python:hover {
+    padding: 20px 20px 20px 20px;
+    transition: var(--tran-03);
+    cursor: pointer;
+}
+
+.python .bot-border {
+    position: fixed;
+    border: solid 1px var(--border-color);
+    width: 100%;
+    margin-top: 45px;
+}
+
+.python span.name {
+    margin-left: 10px;
+}
+/* ===== Python Pages ===== */
+.main .py {
+    font-size: 60px;
+    font-weight: 450;
+    padding: 8px 40px;
+    margin-top: 25px;
+}
+
+.main p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.main .button {
+    display: inline;
+    font-size: 30px;
+    font-weight: 450;
+    line-height: 6;
+    margin-left: 60px;
+    padding: 10px 10px 10px 10px;;
+    border: solid 2px var(--border-color);
+    border-radius: 6px;
+    background: var(--waterfill-color);
+    transition: var(--tran-02);
+}
+
+.main .button:hover {
+    background: #695cfe;
+    transition: var(--tran-02);
+    cursor: pointer;
+}
+
+/* ===== Python info-tab ===== */
+/* note: taskbar width: 35% */
